@@ -9,7 +9,7 @@ const template = `
   </div>
 `
 
-class PersonalDetails extends HTMLElement {
+export default class PersonalDetails extends HTMLElement {
   connectedCallback() {
     this.innerHTML = template
     const personalDetailsInfo = document.querySelector('.js-personal-details-info')
