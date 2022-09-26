@@ -1,0 +1,66 @@
+.personal-details {
+  --face-dimension: 340px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transform-origin: center;
+}
+
+.personal-details a {
+  color: var(--color-text);
+}
+
+.personal-details a:hover,
+.personal-details a:focus {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.personal-details__face {
+  position: relative;
+  left: 0px;
+  height: calc(var(--face-dimension));
+  width: calc(var(--face-dimension));
+  border-radius: 50%;
+  border: solid 24px var(--color-background);
+  box-sizing: border-box;
+}
+
+.personal-details__info {
+  position: absolute;
+  width: var(--face-dimension);
+  height: var(--face-dimension);
+  left: calc(50% - 6px);
+  top: 1px;
+  animation: rotate 70s linear infinite;
+  transform-origin: 6px calc(50% - 1px);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.personal-details__letter {
+  font-family: 'Source Code Pro', monospace;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 11px;
+  height: calc(var(--face-dimension) / 2);
+  transform-origin: bottom center;
+}
+
+@media (max-width: 460px) {
+  .personal-details {
+    transform: scale(0.75);
+  }
+  .personal-details__link {
+    font-size: 1.8rem;
+  }
+}

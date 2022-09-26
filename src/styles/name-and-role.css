@@ -1,0 +1,12 @@
+.name-and-role {
+  position: fixed;
+  left: 32px;
+  bottom: 26px;
+}
+
+.name-and-role__link,
+.name-and-role__link:hover,
+.name-and-role__link:focus {
+  font-weight: 700;
+  color: var(--color-text);
+}
