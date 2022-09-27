@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   transform-origin: center;
+  overflow: auto;
 }
 
 .personal-details a {
