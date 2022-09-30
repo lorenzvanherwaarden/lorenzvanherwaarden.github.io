@@ -1,4 +1,4 @@
-.personal-details {
+personal-details {
   --face-dimension: 340px;
   position: relative;
   display: flex;
@@ -7,17 +7,17 @@
   overflow: hidden;
 }
 
-.personal-details a {
+personal-details a {
   color: var(--color-text);
 }
 
-.personal-details a:hover,
-.personal-details a:focus {
+personal-details a:hover,
+personal-details a:focus {
   color: var(--color-primary);
   opacity: 1;
 }
 
-.personal-details__face {
+personal-details .face {
   position: relative;
   left: 0px;
   height: calc(var(--face-dimension));
@@ -27,7 +27,7 @@
   box-sizing: border-box;
 }
 
-.personal-details__info {
+personal-details .info {
   position: absolute;
   width: var(--face-dimension);
   height: var(--face-dimension);
@@ -46,7 +46,7 @@
   }
 }
 
-.personal-details__letter {
+personal-details .letter {
   font-family: 'Source Code Pro', monospace;
   display: inline-block;
   position: absolute;
@@ -58,10 +58,10 @@
 }
 
 @media (max-width: 460px) {
-  .personal-details {
+  personal-details {
     transform: scale(0.75);
   }
-  .personal-details__link {
+  personal-details .link {
     font-size: 1.8rem;
   }
 }

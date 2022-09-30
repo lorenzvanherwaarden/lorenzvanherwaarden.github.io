@@ -1,12 +1,9 @@
-import myFaceUrl from './myFace.jpg'
+import myFaceUrl from './assets/myFace.jpg'
 import items from './items.json'
 
 const template = `
-  <div class="personal-details">
-    <img class="personal-details__face" alt="My face" src="${myFaceUrl}" />
-    <div class="personal-details__info js-personal-details-info">
-    </div>
-  </div>
+  <img class="face" alt="My face" src="${myFaceUrl}" />
+  <div class="info js-personal-details-info"></div>
 `
 
 export default class PersonalDetails extends HTMLElement {
@@ -52,7 +49,7 @@ export default class PersonalDetails extends HTMLElement {
 
   getSpan(letter, offset) {
     const template = `
-      <span class="personal-details__letter" style="transform: ${this.getTransform(offset)}">
+      <span class="letter" style="transform: ${this.getTransform(offset)}">
         ${letter}
       </span>
     `

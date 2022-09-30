@@ -1,0 +1,10 @@
+moving-rocket {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+moving-rocket img {
+  height: 10px;
+  width: 43px;
+}

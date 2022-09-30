@@ -1,0 +1,19 @@
+moving-asteroid {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+moving-asteroid img {
+  width: 25px;
+  height: 25px;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}

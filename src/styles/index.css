@@ -1,3 +1,5 @@
 @import './style.css';
 @import './name-and-role.css';
-@import './personal-details.css'
+@import './personal-details.css';
+@import './moving-asteroid.css';
+@import './moving-rocket.css';
