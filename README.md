@@ -7,4 +7,4 @@ Personal website using:
 
 The size of the production JavaScript chunk is drastically reduced compared to the [same website built in Vue](https://github.com/lorenzvanherwaarden/lorenzvanherwaarden.github.io-vue): 
 
-> **23.92 kB** gzipped vs **1.3 kB** gzipped.
+> **1.3 kB** gzipped vs **23.92 kB** gzipped.
