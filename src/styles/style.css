@@ -1,16 +1,17 @@
 :root {
   --color-primary: rgb(120, 139, 207);
   --color-text: rgb(230, 230, 230);
+  --color-gitlab-orange: rgb(252, 161, 33);
   --color-background: rgb(37, 37, 37);
 
   --font-family: 'Karla', sans-serif;
   --font-size-base: 10px;
-  --font-size-body: 1.8rem;
+  --font-size-body: 1.6rem;
   --font-size-h1: 4.0rem;
   --font-size-h2: 2.6rem;
   --font-weight-body: 500;
   --font-weight-link: 500;
-  --font-weight-h1: 400;
+  --font-weight-h1: 300;
   --font-weight-h2: 600;
 
   font-synthesis: none;
@@ -70,12 +71,8 @@ a {
   line-height: 1;
 }
 
-a:hover {
-  opacity: 0.5;
-}
-
 h1 {
-  margin: 0;
+  margin: 0 0 4px 0;
   font-weight: var(--font-weight-h1);
   font-size: var(--font-size-h1);
   line-height: 1.2;
