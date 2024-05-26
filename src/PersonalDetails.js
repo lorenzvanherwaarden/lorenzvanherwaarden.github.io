@@ -1,9 +1,8 @@
-import myFaceUrl from './myFace.jpg'
 import items from './items.json'
 
 const template = `
   <div class="personal-details">
-    <img class="personal-details__face" alt="My face" src="${myFaceUrl}" />
+    <img class="personal-details__face" alt="Profile picture" src="/profile-picture.webp" />
     <div class="personal-details__info js-personal-details-info">
     </div>
   </div>
