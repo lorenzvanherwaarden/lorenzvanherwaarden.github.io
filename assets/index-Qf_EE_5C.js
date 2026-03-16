@@ -4,8 +4,4 @@
     <div class="personal-details__info js-personal-details-info">
     </div>
   </div>
-`;class c extends HTMLElement{connectedCallback(){this.innerHTML=l;const t=document.querySelector(".js-personal-details-info");this.itemsWithOffset.forEach((r,s)=>{let e;r.href?(e=document.createElement("a"),e.setAttribute("href",r.href),e.setAttribute("target","_blank")):e=document.createElement("span"),r.name.split("").forEach((n,a)=>{e.appendChild(this.getSpan(n,r.offset+a))}),t.appendChild(e)})}get itemsWithOffset(){let t=0;return o.map(r=>{const s={...r,offset:t};return t+=r.name.length,s})}get nrLetters(){return o.reduce((t,r)=>t+r.name.length,0)}getSpan(t,r){const s=`
-      <span class="personal-details__letter" style="transform: ${this.getTransform(r)}">
-        ${t}
-      </span>
-    `,e=document.createElement("span");return e.innerHTML=s,e}getTransform(t){return`${this.getTurn(t)}`}getTurn(t){return`rotate(${t/this.nrLetters}turn)`}}customElements.define("personal-details",c);
+`;class c extends HTMLElement{#e=null;connectedCallback(){this.innerHTML=l;const t=document.querySelector(".js-personal-details-info");this.itemsWithOffset.forEach((r,s)=>{let e;r.href?(e=document.createElement("a"),e.setAttribute("href",r.href),e.setAttribute("target","_blank"),e.setAttribute("rel","noopener noreferrer")):e=document.createElement("span"),r.name.split("").forEach((n,a)=>{e.appendChild(this.getSpan(n,r.offset+a))}),t.appendChild(e)})}get itemsWithOffset(){if(this.#e!==null)return this.#e;let t=0;return this.#e=o.map(r=>{const s={...r,offset:t};return t+=r.name.length,s}),this.#e}get nrLetters(){return o.reduce((t,r)=>t+r.name.length,0)}getSpan(t,r){const s=document.createElement("span");return s.className="personal-details__letter",s.textContent=t,s.style.transform=this.getTransform(r),s}getTransform(t){return`${this.getTurn(t)}`}getTurn(t){return`rotate(${t/this.nrLetters}turn)`}}customElements.define("personal-details",c);
