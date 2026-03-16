@@ -10,13 +10,14 @@ const template = `
 
 export default class PersonalDetails extends HTMLElement {
   #cachedItemsWithOffset = null
+  #cachedNrLetters = null
 
   connectedCallback() {
     this.innerHTML = template
-    const personalDetailsInfo = document.querySelector('.js-personal-details-info')
+    const personalDetailsInfo = this.querySelector('.js-personal-details-info')
 
     this.itemsWithOffset
-      .forEach((item, i) => {
+      .forEach((item) => {
         let containerEl
         if (item.href) {
           containerEl = document.createElement('a')
@@ -55,19 +56,20 @@ export default class PersonalDetails extends HTMLElement {
   }
 
   get nrLetters() {
-    return items.reduce((counter, item) => counter + item.name.length, 0)
+    if (this.#cachedNrLetters !== null) {
+      return this.#cachedNrLetters
+    }
+
+    this.#cachedNrLetters = items.reduce((counter, item) => counter + item.name.length, 0)
+    return this.#cachedNrLetters
   }
 
   getSpan(letter, offset) {
     const span = document.createElement('span')
     span.className = 'personal-details__letter'
     span.textContent = letter
-    span.style.transform = this.getTransform(offset)
+    span.style.transform = this.getTurn(offset)
     return span
-  }
-
-  getTransform(offset) {
-    return `${this.getTurn(offset)}`
   }
 
   getTurn(offset) {
