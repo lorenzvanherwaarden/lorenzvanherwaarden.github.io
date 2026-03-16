@@ -9,6 +9,8 @@ const template = `
 `
 
 export default class PersonalDetails extends HTMLElement {
+  #cachedItemsWithOffset = null
+
   connectedCallback() {
     this.innerHTML = template
     const personalDetailsInfo = document.querySelector('.js-personal-details-info')
@@ -20,6 +22,7 @@ export default class PersonalDetails extends HTMLElement {
           containerEl = document.createElement('a')
           containerEl.setAttribute('href', item.href)
           containerEl.setAttribute('target', '_blank')
+          containerEl.setAttribute('rel', 'noopener noreferrer')
         } else {
           containerEl = document.createElement('span')
         }
@@ -33,9 +36,13 @@ export default class PersonalDetails extends HTMLElement {
   }
 
   get itemsWithOffset() {
+    if (this.#cachedItemsWithOffset !== null) {
+      return this.#cachedItemsWithOffset
+    }
+
     let offset = 0
 
-    return items.map((item) => {
+    this.#cachedItemsWithOffset = items.map((item) => {
       const formatted = {
         ...item,
         offset,
@@ -43,6 +50,8 @@ export default class PersonalDetails extends HTMLElement {
       offset += item.name.length
       return formatted
     })
+
+    return this.#cachedItemsWithOffset
   }
 
   get nrLetters() {
@@ -50,15 +59,10 @@ export default class PersonalDetails extends HTMLElement {
   }
 
   getSpan(letter, offset) {
-    const template = `
-      <span class="personal-details__letter" style="transform: ${this.getTransform(offset)}">
-        ${letter}
-      </span>
-    `
-
     const span = document.createElement('span')
-    span.innerHTML = template
-
+    span.className = 'personal-details__letter'
+    span.textContent = letter
+    span.style.transform = this.getTransform(offset)
     return span
   }
 
