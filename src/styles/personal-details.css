@@ -32,16 +32,16 @@
   width: var(--face-dimension);
   height: var(--face-dimension);
   left: calc(50% - 5px);
-  animation: rotate 90s linear infinite;
+  animation: rotate 20s linear infinite;
   transform-origin: 5px calc(50%);
 }
 
 @keyframes rotate {
   from {
-    transform: rotate(0deg);
+    transform: rotate(110deg);
   }
   to {
-    transform: rotate(-360deg);
+    transform: rotate(-250deg);
   }
 }
 
